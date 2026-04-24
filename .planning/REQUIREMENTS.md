@@ -85,39 +85,39 @@ Deferred. Assignment explicitly calls these **stretch goals** — not required, 
 
 ## Traceability
 
-Populated during roadmap creation — each v1 requirement maps to exactly one phase.
+Each v1 requirement maps to exactly one phase.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | SUB-01 | Phase 1 (Scaffold) | Pending |
 | SUB-05 | Phase 1 (Scaffold) | Pending |
 | UI-01 | Phase 2 (Design Foundations) | Pending |
-| UI-02 | Phase 2 (Design Foundations) + Phase 6 (Polish audit) | Pending |
-| UI-03 | Phase 6 (Polish) | Pending |
+| UI-02 | Phase 2 (Design Foundations) | Pending |
 | AUTH-01 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-02 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-03 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-04 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-05 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-06 | Phase 3 (Auth + Role Router) | Pending |
-| ADMIN-01 | Phase 4a (Admin Experience) | Pending |
-| ADMIN-02 | Phase 4a (Admin Experience) | Pending |
-| ADMIN-03 | Phase 4a (Admin Experience) | Pending |
-| PROF-01 | Phase 4b (Professor Experience) | Pending |
-| PROF-02 | Phase 4b (Professor Experience) | Pending |
-| PROF-03 | Phase 4b (Professor Experience) | Pending |
-| PROF-04 | Phase 4b (Professor Experience) | Pending |
-| PROF-05 | Phase 4b (Professor Experience) | Pending |
-| PROF-06 | Phase 4b (Professor Experience) | Pending |
-| STUD-01 | Phase 4c (Student Experience) | Pending |
-| STUD-02 | Phase 4c (Student Experience) | Pending |
-| STUD-03 | Phase 4c (Student Experience) | Pending |
-| STUD-04 | Phase 4c (Student Experience) | Pending |
-| SHARED-01 | Phase 5 (Shared + Deep Linking) | Pending |
-| SHARED-02 | Phase 5 (Shared + Deep Linking) | Pending |
-| SUB-02 | Phase 6 (Polish + Submit) | Pending |
-| SUB-03 | Phase 6 (Polish + Submit) | Pending |
-| SUB-04 | Phase 6 (Polish + Submit) | Pending |
+| ADMIN-01 | Phase 4 (Admin Experience) | Pending |
+| ADMIN-02 | Phase 4 (Admin Experience) | Pending |
+| ADMIN-03 | Phase 4 (Admin Experience) | Pending |
+| PROF-01 | Phase 5 (Professor Experience) | Pending |
+| PROF-02 | Phase 5 (Professor Experience) | Pending |
+| PROF-03 | Phase 5 (Professor Experience) | Pending |
+| PROF-04 | Phase 5 (Professor Experience) | Pending |
+| PROF-05 | Phase 5 (Professor Experience) | Pending |
+| PROF-06 | Phase 5 (Professor Experience) | Pending |
+| STUD-01 | Phase 6 (Student Experience) | Pending |
+| STUD-02 | Phase 6 (Student Experience) | Pending |
+| STUD-03 | Phase 6 (Student Experience) | Pending |
+| STUD-04 | Phase 6 (Student Experience) | Pending |
+| SHARED-01 | Phase 7 (Shared + Deep Linking) | Pending |
+| SHARED-02 | Phase 7 (Shared + Deep Linking) | Pending |
+| UI-03 | Phase 8 (Polish + Submit) | Pending |
+| SUB-02 | Phase 8 (Polish + Submit) | Pending |
+| SUB-03 | Phase 8 (Polish + Submit) | Pending |
+| SUB-04 | Phase 8 (Polish + Submit) | Pending |
 
 **Coverage:**
 - v1 requirements: 29 total
@@ -126,4 +126,4 @@ Populated during roadmap creation — each v1 requirement maps to exactly one ph
 
 ---
 *Requirements defined: 2026-04-23*
-*Last updated: 2026-04-23 after initial definition*
+*Last updated: 2026-04-23 — traceability finalized after roadmap creation (8-phase structure)*
