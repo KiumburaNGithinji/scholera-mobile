@@ -27,10 +27,18 @@ create table if not exists public.departments (
   created_at  timestamptz not null default now()
 );
 
--- Add FK from profiles → departments
-alter table public.profiles
-  add constraint if not exists fk_profiles_department
-  foreign key (department_id) references public.departments(id) on delete set null;
+-- Add FK from profiles → departments (Postgres has no `add constraint if not exists` —
+-- guard via pg_constraint lookup so re-runs on a populated DB don't error)
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint where conname = 'fk_profiles_department'
+  ) then
+    alter table public.profiles
+      add constraint fk_profiles_department
+      foreign key (department_id) references public.departments(id) on delete set null;
+  end if;
+end$$;
 
 -- ─── PROGRAMS ──────────────────────────────────────────────
 create table if not exists public.programs (
