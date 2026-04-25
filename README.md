@@ -1,50 +1,56 @@
-# Welcome to your Expo app 👋
+# Scholera Mobile
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Native mobile LMS companion for Scholera — a role-aware React Native app where admin, professor, and student each get a distinct home experience after login.
 
-## Get started
+## Status
 
-1. Install dependencies
+Phase 1 / 8 — **Scaffold complete.** Screens and auth wiring land in Phases 2 and 3. Full setup instructions, framework rationale, and screenshots will be added in Phase 8 (final).
 
-   ```bash
-   npm install
-   ```
+## Stack
 
-2. Start the app
+- **Expo SDK 54** + TypeScript (strict)
+- **Expo Router v4** — file-based routing + native deep linking
+- **NativeWind 4.2.3** — Tailwind in React Native, role-specific accent via CSS variables
+- **Supabase** — Auth + Postgres + Storage (project: `htlolqbwhulyihguwdoq`)
+- **TanStack Query v5** — server state + optimistic updates
+- **Zod v3** + **react-hook-form** — form validation
 
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Running locally (placeholder — full guide in Phase 8)
 
 ```bash
-npm run reset-project
+# Install deps (first time only)
+npm install
+
+# Copy .env.example and fill in real Supabase values
+cp .env.example .env.local
+# Edit .env.local — set EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_ANON_KEY
+
+# Start the dev server
+npx expo start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Demo accounts (after applying `supabase/seed.sql`):
+- `admin@demo.scholera.test` / `demo-password-1234`
+- `prof@demo.scholera.test` / `demo-password-1234`
+- `student@demo.scholera.test` / `demo-password-1234`
 
-## Learn more
+## Repo layout
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+app/              Expo Router routes (populated Phase 2+)
+components/ui/    Shared UI primitives (Phase 2)
+hooks/            TanStack Query wrappers (Phase 3+)
+queries/          Supabase query functions (Phase 3+)
+lib/supabase.ts   Supabase client singleton
+providers/        AuthProvider, QueryClientProvider (Phase 3)
+theme/            Design tokens (Phase 2)
+types/            Database + app-level types
+supabase/         SQL migrations + seed
+scripts/          Dev/CI scripts (smoke checks)
+.planning/        GSD planning artifacts (docs, not secrets)
+reference/        Original assignment + design direction
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## License
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Private take-home assignment for Scholera Mobile Developer Intern role — not for public redistribution.
