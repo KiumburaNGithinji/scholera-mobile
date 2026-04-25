@@ -34,10 +34,12 @@ The other SUB-* requirements (README, demo video, `AI_ASSISTANT_USAGE.md` finali
 
 ### Supabase project provisioning
 
-- **D-01:** Default assumption is **we create our own Supabase project on the free tier**. The assignment says "backend is provided as a REST API" but the provided Gmail / assessments repo does not include credentials. Creating our own project is the path of lowest friction and avoids blocking on external creds.
-- **D-02:** Before provisioning, **spend up to 10 minutes investigating** the lucidopus/scholera-coding-assessments repo for any env-example / schema / credentials. If found, use them. If not, create our own project immediately.
-- **D-03:** Project name: `scholera-mobile-assignment` (Supabase free tier, us-east region for lowest latency during a US-based demo).
-- **D-04:** Auto-selected (recommended): **(c) hybrid — check-first-else-own.**
+- **D-01:** **LOCKED — User has already provisioned the Supabase project.** No need to investigate Scholera's assessments repo.
+- **D-02:** **Project ID:** `htlolqbwhulyihguwdoq`
+  **URL:** `https://htlolqbwhulyihguwdoq.supabase.co`
+  **Dashboard:** `https://supabase.com/dashboard/project/htlolqbwhulyihguwdoq`
+- **D-03:** **Anon key** to be supplied by user when execute-phase 1 needs to write `.env.local` (Dashboard → Project Settings → API → "Project API keys" → `anon public`). NEVER commit `service_role`.
+- **D-04:** Schema + seed get applied to this Supabase project via the Supabase SQL editor or `psql` connection during execute-phase. Migrations live in `supabase/migrations/`.
 
 ### Schema definition
 
@@ -115,15 +117,15 @@ The other SUB-* requirements (README, demo video, `AI_ASSISTANT_USAGE.md` finali
 
 ### GitHub repo
 
-- **D-26:** Repo name: `scholera-mobile`, public, under Kiumbura's account, description: "Take-home assignment: native mobile companion app for Scholera LMS (3 roles × Supabase × Expo)."
-- **D-27:** `origin` set to the new repo, verified via `git remote -v` before first push. Initial branch: `main`.
-- **D-28:** Auto-selected (recommended): **(a) `scholera-mobile` public under Kiumbura's account.**
+- **D-26:** **LOCKED — User has already created the repo:** `github.com/KiumburaNGithinji/scholera-mobile` (public).
+- **D-27:** `origin` set via `git remote add origin https://github.com/KiumburaNGithinji/scholera-mobile.git`. Verified via `git remote -v` before first push. Initial branch: `main`.
+- **D-28:** Push requires `gh auth status` to be logged in OR HTTPS auth via PAT. User to verify with `gh auth status` before execute-phase pushes.
 
 ### Submission-invalidator gates (done in Phase 1 or never)
 
-- **D-29:** **Before first `git push`:** run `git remote -v` and verify only the new scholera-mobile repo is listed. Never push to `lucidopus/scholera-coding-assessments`.
-- **D-30:** **Before first commit:** verify `.env*` is in `.gitignore`, do `git diff --cached | grep -E '(supabase\.co|eyJ)'` to check nothing leaked.
-- **D-31:** Keep Scholera's service_role key out of the mobile app entirely. Only anon key (public by design) goes in `.env.local`.
+- **D-29:** **Before first `git push`:** run `git remote -v` and verify origin is `github.com/KiumburaNGithinji/scholera-mobile`. Never push to `lucidopus/scholera-coding-assessments`.
+- **D-30:** **Before first commit:** verify `.env*` is in `.gitignore`, do `git diff --cached | grep -Ei "(supabase\\.co|eyJ|sb_secret|service_role)"` to check nothing leaked.
+- **D-31:** Keep Supabase `service_role` key out of the mobile app entirely. Only `anon` key (public by design) goes in `.env.local` with `EXPO_PUBLIC_` prefix.
 
 ### Claude's Discretion
 
