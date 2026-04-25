@@ -1,8 +1,8 @@
 ---
 phase: 1
 slug: scaffold
-status: draft
-nyquist_compliant: false
+status: planned
+nyquist_compliant: true
 wave_0_complete: false
 created: 2026-04-24
 ---
@@ -42,12 +42,34 @@ Phase 1 is infrastructure scaffolding. There are no behavioral tests yet — val
 
 | Task ID | Plan | Wave | Requirement | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|-----------|-------------------|-------------|--------|
-| 1-01-01 | 01 | 1 | SUB-01 | manual | `git remote -v` ⇒ contains `KiumburaNGithinji/scholera-mobile` | ✅ | ⬜ pending |
-| 1-01-02 | 01 | 1 | SUB-05 | smoke | `git log --all -p \| grep -Ei '(eyJ[a-zA-Z]{20,})' \| grep -v placeholder` returns empty | ✅ | ⬜ pending |
+| 1-01-01 | 01 | 1 | SUB-05 | smoke | `grep -q "^\.env\.local$" .gitignore && grep -q "^\.env$" .gitignore && grep -q "^\.env\.\*\.local$" .gitignore && ! grep -q "^\.planning" .gitignore` | ✅ | ⬜ pending |
+| 1-01-02 | 01 | 1 | SUB-05 | smoke | `test -f .env.example && test -f .env.local && grep -q "placeholder" .env.example && git check-ignore .env.local` | ✅ | ⬜ pending |
+| 1-01-03 | 01 | 1 | SUB-05 | smoke | `grep -q "EXPO_PUBLIC_SUPABASE_ANON_KEY=eyJ" .env.local && ! grep -q "PASTE ANON KEY HERE" .env.local` (post-checkpoint) | ✅ | ⬜ pending |
+| 1-01-04 | 01 | 1 | SUB-01 | smoke | `git remote -v \| grep -E "^origin\s+https://github\.com/KiumburaNGithinji/scholera-mobile\.git\s+\(push\)$"` | ✅ | ⬜ pending |
+| 1-02-01 | 02 | 2 | — | smoke | `test -f package.json && grep -q "\"expo\"" package.json && grep -q "^\.env\.local$" .gitignore && ! test -d "app/(tabs)"` | ✅ | ⬜ pending |
+| 1-02-02 | 02 | 2 | — | smoke | `node -e "require('./package.json').dependencies['@supabase/supabase-js']"` (every pinned dep present) | ✅ | ⬜ pending |
+| 1-02-03 | 02 | 2 | — | smoke | `node -e "const c=require('./app.json'); if(c.expo.scheme!=='scholera'\|\|c.expo.newArchEnabled!==false)throw 1"` | ✅ | ⬜ pending |
+| 1-03-01 | 03 | 3 | — | smoke | `grep -q "nativewind/preset" tailwind.config.js && grep -q "@tailwind base" global.css && grep -q "jsxImportSource.*nativewind" babel.config.js && grep -q "withNativeWind(config" metro.config.js` | ✅ | ⬜ pending |
+| 1-03-02 | 03 | 3 | — | smoke | `node -e "const c=require('./tsconfig.json'); if(c.compilerOptions.strict!==true\|\|!c.compilerOptions.paths['@/*'])throw 1"` | ✅ | ⬜ pending |
+| 1-03-03 | 03 | 3 | — | smoke | `test -d "app/(auth)" && test -d "app/(admin)/(tabs)" && test -d lib && test -d types && test -d supabase/migrations` | ✅ | ⬜ pending |
+| 1-03-04 | 03 | 3 | — | smoke | `head -5 lib/supabase.ts \| grep -q "react-native-url-polyfill/auto" && grep -q "storage: AsyncStorage" lib/supabase.ts && ! grep -q "SecureStore" lib/supabase.ts` | ✅ | ⬜ pending |
+| 1-03-05 | 03 | 3 | — | smoke | `head -2 app/_layout.tsx \| grep -q "global.css" && grep -q "SafeAreaProvider" app/_layout.tsx` | ✅ | ⬜ pending |
+| 1-03-06 | 03 | 3 | — | smoke | `grep -q "export interface Database" types/database.types.ts && grep -q "export type Role" types/app.types.ts` | ✅ | ⬜ pending |
+| 1-03-07 | 03 | 3 | — | gate | `npx tsc --noEmit` exits 0 (Wave 3 gate) | ✅ | ⬜ pending |
+| 1-04-01 | 04 | 4 | — | smoke | `grep -c "create table if not exists public\." supabase/migrations/00000000000001_initial_schema.sql` returns 11 + RLS enable lines | ✅ | ⬜ pending |
+| 1-04-02 | 04 | 4 | — | manual | User confirms via Dashboard: 11 tables visible with RLS enabled (post-checkpoint) | ⚠️ | ⬜ pending |
+| 1-04-03 | 04 | 4 | — | smoke | `grep -q "demo-password-1234" supabase/seed.sql && grep -q "auth.identities" supabase/seed.sql && wc -l supabase/seed.sql ≥ 130` | ✅ | ⬜ pending |
+| 1-04-04 | 04 | 4 | — | manual | User confirms 5 SQL count queries match: auth.users=3, auth.identities=3, profiles=3, courses=2, items/roadmap/topics/progress per spec (post-checkpoint) | ⚠️ | ⬜ pending |
+| 1-04-05 | 04 | 4 | — | smoke | `wc -l types/database.types.ts > 100 && grep -q "profiles:" types/database.types.ts && npx tsc --noEmit` | ✅ | ⬜ pending |
+| 1-05-01 | 05 | 5 | — | smoke | `test -x scripts/phase1-smoke.sh && grep -q "1/5 TypeScript" scripts/phase1-smoke.sh` | ✅ | ⬜ pending |
+| 1-05-02 | 05 | 5 | SUB-03 (seed) | smoke | `test -f AI_ASSISTANT_USAGE.md && wc -l AI_ASSISTANT_USAGE.md ≥ 5` (post-checkpoint) | ✅ | ⬜ pending |
+| 1-05-03 | 05 | 5 | — | smoke | `grep -q "Scholera Mobile" README.md && grep -q "EXPO_PUBLIC_SUPABASE" README.md` | ✅ | ⬜ pending |
+| 1-05-04 | 05 | 5 | SUB-01, SUB-05 | gate | `bash scripts/phase1-smoke.sh` — all 5 checks green | ✅ | ⬜ pending |
+| 1-05-05 | 05 | 5 | SUB-01, SUB-05 | gate | `git ls-remote --heads origin main \| grep refs/heads/main` AND `git log --all -p \| grep -Ei "(eyJ[a-zA-Z]{20,})" \| grep -v placeholder` returns EMPTY | ✅ | ⬜ pending |
 
-*Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
+*Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky / manual*
 
-*Planner will append rows for the remaining tasks.*
+Total: 24 tasks across 5 plans / 5 waves. Of those: 19 fully automated, 2 partial (file-state checks bracket the manual Supabase Dashboard verification), 3 user-action checkpoints (Plan 01 Task 3 anon key paste, Plan 04 Tasks 2/4 SQL apply, Plan 05 Task 2 AI_ASSISTANT_USAGE.md authoring) — all with file-state automated post-checks.
 
 ---
 

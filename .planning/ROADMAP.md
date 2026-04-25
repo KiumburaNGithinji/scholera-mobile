@@ -26,12 +26,17 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
 **Depends on**: Nothing (first phase)
 **Requirements**: SUB-01, SUB-05
 **Success Criteria** (what must be TRUE):
-  1. A new public GitHub repo exists at `github.com/Kiumbura/scholera-mobile`; `git remote -v` shows only that repo, never Scholera's assessments repo
+  1. A new public GitHub repo exists at `github.com/KiumburaNGithinji/scholera-mobile`; `git remote -v` shows only that repo, never Scholera's assessments repo
   2. `.gitignore` includes `.env*`; `git log --all -p | grep "supabase.co"` returns no key values; `.env.example` exists with placeholder values
   3. `npx expo start` launches without errors; all pinned packages installed at correct versions (Expo SDK 54, NativeWind 4.2.3, Zod 3.x, AsyncStorage — no SecureStore for session)
-  4. `lib/supabase.ts` uses `expo-sqlite/localStorage` (or AsyncStorage) as session adapter; generated Supabase types committed to `src/types/database.types.ts`
+  4. `lib/supabase.ts` uses AsyncStorage as session adapter (with `react-native-url-polyfill/auto` as the FIRST import); generated Supabase types committed to `types/database.types.ts`
   5. SQL seed script executed: at least 1 admin, 1 professor with 2 courses (modules + items + roadmap + topics), 1 student enrolled in both; `AI_ASSISTANT_USAGE.md` file exists with a hand-written draft paragraph
-**Plans**: TBD
+**Plans**: 5 plans
+  - [ ] 01-01-repo-baseline-PLAN.md — gitignore + .env.example/.env.local + git remote pointing to KiumburaNGithinji/scholera-mobile (SUB-01, SUB-05)
+  - [ ] 01-02-expo-scaffold-PLAN.md — create-expo-app SDK 54 in place + pinned deps from STACK.md + app.json (scheme: scholera, newArchEnabled: false)
+  - [ ] 01-03-config-and-client-PLAN.md — NativeWind v4 wiring (3 points) + tsconfig strict + lib/supabase.ts (url-polyfill first, AsyncStorage) + types stubs + tsc --noEmit passes
+  - [ ] 01-04-schema-seed-types-PLAN.md — supabase migration (11 tables + RLS) + seed (auth.users + auth.identities + demo data) + types regeneration from live schema
+  - [ ] 01-05-smoke-and-push-PLAN.md — phase1-smoke.sh (5 checks) + AI_ASSISTANT_USAGE.md draft + README placeholder + first push to origin/main
 
 ### Phase 2: Design Foundations
 **Goal**: Shared design system and UI primitives exist so every downstream screen starts from working components, not from scratch
