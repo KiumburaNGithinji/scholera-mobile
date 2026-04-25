@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 01-scaffold/01-02-expo-scaffold-PLAN.md
-last_updated: "2026-04-25T20:46:27.257Z"
+stopped_at: Completed 01-scaffold plan 03 (config-and-client)
+last_updated: "2026-04-25T20:51:56.303Z"
 last_activity: 2026-04-25
 progress:
   total_phases: 8
   completed_phases: 0
   total_plans: 5
-  completed_plans: 2
+  completed_plans: 3
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-23)
 ## Current Position
 
 Phase: 1 (scaffold) — EXECUTING
-Plan: 2 of 5
+Plan: 3 of 5
 Status: Ready to execute
 Last activity: 2026-04-25
 
@@ -53,6 +53,7 @@ Progress: [░░░░░░░░░░] 0%
 
 *Updated after each plan completion*
 | Phase 01-scaffold P02 | 6 | 3 tasks | 17 files |
+| Phase 01-scaffold P03 | 25 | 7 tasks | 16 files |
 
 ## Accumulated Context
 
@@ -66,6 +67,9 @@ Recent decisions affecting current work:
 - Roadmap: AsyncStorage (via expo-sqlite/localStorage polyfill) mandated in Phase 1 success criteria — SecureStore is explicitly blocked due to 2048-byte session size limit
 - [Phase 01-scaffold]: react-native-url-polyfill resolved to v3 (not v2) by npx expo install SDK 54 compat matrix — accepted as superset
 - [Phase 01-scaffold]: app.json newArchEnabled:false required for NativeWind v4 compatibility on SDK 54
+- [Phase 01-scaffold]: NativeWind v4 three-point wiring: babel jsxImportSource + metro withNativeWind + global.css import in _layout.tsx
+- [Phase 01-scaffold]: Supabase singleton: url-polyfill first import, AsyncStorage (not SecureStore), detectSessionInUrl false, env-var credentials only
+- [Phase 01-scaffold]: database.types.ts stub uses Record<string, unknown> for all table rows to satisfy tsc until Plan 04 generates real types
 
 ### Pending Todos
 
@@ -79,6 +83,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-25T20:46:27.253Z
-Stopped at: Completed 01-scaffold/01-02-expo-scaffold-PLAN.md
+Last session: 2026-04-25T20:51:56.300Z
+Stopped at: Completed 01-scaffold plan 03 (config-and-client)
 Resume file: None

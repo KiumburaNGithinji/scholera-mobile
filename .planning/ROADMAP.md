@@ -32,9 +32,9 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
   4. `lib/supabase.ts` uses AsyncStorage as session adapter (with `react-native-url-polyfill/auto` as the FIRST import); generated Supabase types committed to `types/database.types.ts`
   5. SQL seed script executed: at least 1 admin, 1 professor with 2 courses (modules + items + roadmap + topics), 1 student enrolled in both; `AI_ASSISTANT_USAGE.md` file exists with a hand-written draft paragraph
 **Plans**: 5 plans
-  - [ ] 01-01-repo-baseline-PLAN.md — gitignore + .env.example/.env.local + git remote pointing to KiumburaNGithinji/scholera-mobile (SUB-01, SUB-05)
-  - [ ] 01-02-expo-scaffold-PLAN.md — create-expo-app SDK 54 in place + pinned deps from STACK.md + app.json (scheme: scholera, newArchEnabled: false)
-  - [ ] 01-03-config-and-client-PLAN.md — NativeWind v4 wiring (3 points) + tsconfig strict + lib/supabase.ts (url-polyfill first, AsyncStorage) + types stubs + tsc --noEmit passes
+  - [x] 01-01-repo-baseline-PLAN.md — gitignore + .env.example/.env.local + git remote pointing to KiumburaNGithinji/scholera-mobile (SUB-01, SUB-05)
+  - [x] 01-02-expo-scaffold-PLAN.md — create-expo-app SDK 54 in place + pinned deps from STACK.md + app.json (scheme: scholera, newArchEnabled: false)
+  - [x] 01-03-config-and-client-PLAN.md — NativeWind v4 wiring (3 points) + tsconfig strict + lib/supabase.ts (url-polyfill first, AsyncStorage) + types stubs + tsc --noEmit passes
   - [ ] 01-04-schema-seed-types-PLAN.md — supabase migration (11 tables + RLS) + seed (auth.users + auth.identities + demo data) + types regeneration from live schema
   - [ ] 01-05-smoke-and-push-PLAN.md — phase1-smoke.sh (5 checks) + AI_ASSISTANT_USAGE.md draft + README placeholder + first push to origin/main
 
@@ -131,7 +131,7 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Scaffold | 0/TBD | Not started | - |
+| 1. Scaffold | 3/5 | In Progress|  |
 | 2. Design Foundations | 0/TBD | Not started | - |
 | 3. Auth + Role Router | 0/TBD | Not started | - |
 | 4. Admin Experience | 0/TBD | Not started | - |
