@@ -4,6 +4,8 @@ Native mobile LMS companion for Scholera — a role-aware React Native app where
 
 Submitted by **Kiumbura N. Githinji** for the Scholera Mobile Developer Intern take-home, April 2026.
 
+**🎥 Demo video:** https://youtu.be/mLJHmqE88wM
+
 ---
 
 ## Screenshots
