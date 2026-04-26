@@ -80,7 +80,7 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
   - [x] 04-01-rls-unblock-PLAN.md — supabase migration 04 (SECURITY DEFINER is_admin helper + admin-read-all policy on profiles); manual SQL apply via Supabase SQL editor (ADMIN-01, ADMIN-02, ADMIN-03)
   - [x] 04-02-query-hooks-PLAN.md — TanStack Query v5 hooks: useAdminStats / useAdminDepartments / useAdminDepartmentDetail / useAdminProfessorDetail (ADMIN-01, ADMIN-02, ADMIN-03)
   - [ ] 04-03-dashboard-and-departments-PLAN.md — replace admin tab placeholder with real dashboard: 2×2 stats grid via StatCard + departments list with tap-through (ADMIN-01, ADMIN-02)
-  - [ ] 04-04-detail-screens-PLAN.md — /(admin)/departments/[id] + /(admin)/professors/[id] dynamic routes with Stack header titles, full 4-state coverage (ADMIN-02, ADMIN-03)
+  - [x] 04-04-detail-screens-PLAN.md — /(admin)/departments/[id] + /(admin)/professors/[id] dynamic routes with Stack header titles, full 4-state coverage (ADMIN-02, ADMIN-03)
 **UI hint**: yes
 
 ### Phase 5: Professor Experience

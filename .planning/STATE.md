@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 04-02-query-hooks-PLAN.md
-last_updated: "2026-04-26T05:11:13.283Z"
+stopped_at: Completed 04-04-detail-screens-PLAN.md
+last_updated: "2026-04-26T05:18:51.796Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 8
   completed_phases: 2
   total_plans: 12
-  completed_plans: 11
+  completed_plans: 12
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-23)
 ## Current Position
 
 Phase: 04 (admin-experience) — EXECUTING
-Plan: 2 of 4
+Plan: 3 of 4
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -58,6 +58,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-design-foundations P02 | 2 | 3 tasks | 5 files |
 | Phase 02-design-foundations P03 | 3 | 3 tasks | 9 files |
 | Phase 04 P02 | 4 | 5 tasks | 5 files |
+| Phase 04 P04 | 2 | 4 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -87,6 +88,9 @@ Recent decisions affecting current work:
 - [Phase 04]: [Phase 04-admin-experience]: Admin dashboard stats bundled in single useQuery (4 parallel HEAD count queries via Promise.all) — one cache entry, one skeleton, one error path matches the 2x2 grid render
 - [Phase 04]: [Phase 04-admin-experience]: Detail hooks accept id|undefined + enabled:Boolean(id) — screens pass useLocalSearchParams() values without ! assertions
 - [Phase 04]: [Phase 04-admin-experience]: Department professor counts via two-query Map-merge (no PostgREST view) — small data volume makes client aggregation essentially free
+- [Phase 04]: [Phase 04-admin-experience]: React Navigation 7 header — headerBackButtonDisplayMode 'minimal' replaces removed headerBackTitleVisible flag; established as project-wide convention for nested Stack detail screens
+- [Phase 04]: [Phase 04-admin-experience]: Dynamic detail screen pattern established — folder/_layout.tsx for shared header style + folder/[id].tsx with <Stack.Screen options={{ title: data?.x.name ?? 'Fallback' }}> for per-screen dynamic title; mirror in Phase 5/6
+- [Phase 04]: [Phase 04-admin-experience]: Drill-down vs terminal-view distinction encoded structurally — onPress + auto chevron for tappable rows, showChevron={false} + no onPress for viewing-only rows; structural signal preferred over discoverable lack-of-response
 
 ### Pending Todos
 
@@ -100,6 +104,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T05:11:03.425Z
-Stopped at: Completed 04-02-query-hooks-PLAN.md
+Last session: 2026-04-26T05:18:51.793Z
+Stopped at: Completed 04-04-detail-screens-PLAN.md
 Resume file: None
