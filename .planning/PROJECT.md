@@ -12,7 +12,10 @@ A native mobile companion app for **Scholera**, an AI-native Learning Management
 
 ### Validated
 
-(None yet — greenfield prototype. All requirements are hypotheses until the demo lands.)
+**Design foundations (Phase 2):**
+- [x] Design system with Claude-inspired tokens (warm cream bg, role-specific accents: clay/steel/sage) — UI-01
+- [x] Reusable primitives: Button, Card, Chip, ListRow, EmptyState, Skeleton, ErrorView — UI-01, UI-02
+- [x] Native-feeling polish foundation (spacing scale, Inter typography, skeleton shimmer, role accent swap) — UI-01, UI-02
 
 ### Active
 
@@ -49,9 +52,8 @@ A native mobile companion app for **Scholera**, an AI-native Learning Management
 - [ ] Deep linking to specific announcement: `scholera://courses/{courseId}/announcements/{announcementId}` opens that announcement after login
 
 **Design foundations (quality):**
-- [ ] Design system with Claude-inspired tokens (warm cream bg, role-specific accents: clay/steel/sage)
-- [ ] Reusable primitives: Card, Button, Chip, ListRow, empty/loading/error states
-- [ ] Native-feeling polish throughout (spacing, typography, transitions, skeletons)
+- [x] Validated in Phase 2: tokens, 7 primitives, RoleThemeProvider, QueryClient — see `.planning/phases/02-design-foundations/`
+- [ ] Native-feeling polish throughout (transitions, haptics, pull-to-refresh) — Phase 8 enforces
 
 ### Out of Scope
 
@@ -94,8 +96,10 @@ A native mobile companion app for **Scholera**, an AI-native Learning Management
 | Role-specific accent colors (admin/prof/student) | "App should look and feel different depending on who is logged in" is a rubric item; single-token swap achieves distinctness without fragmenting design system | — Pending |
 | Include dedicated Design Foundations phase | Tokens + 4 primitives pay for themselves across all downstream screens | — Pending |
 | Auto mode with Verifier disabled | Tight 2-day timeline; we'll verify via demo walkthrough | — Pending |
-| NativeWind over Tamagui | Simpler tokens, less config, Kiumbura already knows Tailwind (FamilyFinance uses Vite+Tailwind) | — Pending |
+| NativeWind over Tamagui | Simpler tokens, less config, Kiumbura already knows Tailwind (FamilyFinance uses Vite+Tailwind) | ✓ Validated Phase 2 — vars() role swap works cleanly |
 | Skip all stretch goals in core pass | Focus on the 11 required features + polish; revisit stretch only if time remains | — Pending |
+| Single `--color-accent` CSS var swap for role themes | All other tokens role-independent; one var keeps theming surgical | ✓ Validated Phase 2 — RoleThemeProvider proves it |
+| Reanimated v4.1.1 (not v3 as STACK.md predicted) | npx expo install on SDK 54 resolved to v4 | ✓ Accepted — shared-value API stable across both versions |
 
 ## Evolution
 
@@ -115,4 +119,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-23 after initialization*
+*Last updated: 2026-04-25 after Phase 2 (design-foundations) completion*
