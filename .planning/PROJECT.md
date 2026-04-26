@@ -25,6 +25,13 @@ A native mobile companion app for **Scholera**, an AI-native Learning Management
 - [x] Expired sessions handled gracefully (onAuthStateChange SIGNED_OUT clears state) — AUTH-04
 - [x] Sign-out from any role (visible in tab header for all 3 role groups) — AUTH-05, AUTH-06
 
+**Admin experience (Phase 4):**
+- [x] Admin dashboard with institution stats (students, professors, courses, departments) — ADMIN-01
+- [x] Departments list with assigned professor counts — ADMIN-02
+- [x] Department detail → professors in department — ADMIN-02
+- [x] Professor detail → assigned courses (back-stack: dept detail → prof detail) — ADMIN-03
+- [x] RLS unblock via SECURITY DEFINER `is_admin()` helper (migration 04) — restored after migration 02 dropped the recursive original
+
 ### Active
 
 <!-- Grouped by role. REQ-IDs assigned in REQUIREMENTS.md during definition step. -->
@@ -33,10 +40,7 @@ A native mobile companion app for **Scholera**, an AI-native Learning Management
 - [x] Validated in Phase 3 (fast-mode) — see `.planning/phases/03-auth-and-role-router/`
 
 **Admin:**
-- [ ] Admin dashboard with institution stats (students, professors, courses, departments)
-- [ ] Departments list with assigned professors
-- [ ] Department detail → professors in department
-- [ ] Professor detail → assigned courses
+- [x] Validated in Phase 4 — see `.planning/phases/04-admin-experience/`
 
 **Professor:**
 - [ ] "My Courses" list of taught sections
@@ -122,4 +126,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-25 after Phase 2 (design-foundations) completion*
+*Last updated: 2026-04-26 after Phase 4 (admin-experience) completion*
