@@ -12,7 +12,7 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
 
 - [x] **Phase 1: Scaffold** - New public repo, secrets config, Expo project with pinned packages, Supabase client + types, seed data, AI_ASSISTANT_USAGE.md draft (completed 2026-04-25)
 - [ ] **Phase 2: Design Foundations** - Token system, 7 UI primitives, RoleThemeProvider, QueryClient — everything downstream screens consume
-- [ ] **Phase 3: Auth + Role Router** - Sign-in screen, AuthProvider, route-group guards, session persistence, sign-out
+- [x] **Phase 3: Auth + Role Router** - Sign-in screen, AuthProvider, route-group guards, session persistence, sign-out (completed 2026-04-25, fast-mode)
 - [ ] **Phase 4: Admin Experience** - Dashboard stats, departments list, department detail, professor drill-down
 - [ ] **Phase 5: Professor Experience** - My Courses, tabbed course management, announcements CRUD, module hierarchy + item creation + file upload, professor roadmap
 - [ ] **Phase 6: Student Experience** - My Courses, read-only tabbed course detail, student roadmap with dual-status
@@ -135,8 +135,8 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Scaffold | 3/5 | Complete    | 2026-04-25 |
-| 2. Design Foundations | 0/3 | Not started | - |
-| 3. Auth + Role Router | 0/TBD | Not started | - |
+| 2. Design Foundations | 3/3 | Complete    | 2026-04-25 |
+| 3. Auth + Role Router | 1/1 | Complete (fast) | 2026-04-25 |
 | 4. Admin Experience | 0/TBD | Not started | - |
 | 5. Professor Experience | 0/TBD | Not started | - |
 | 6. Student Experience | 0/TBD | Not started | - |
