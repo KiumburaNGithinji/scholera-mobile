@@ -2,8 +2,8 @@
 phase: 04-admin-experience
 plan: 03
 type: execute
-wave: 3
-depends_on: [04-01, 04-02]
+wave: 4
+depends_on: [04-01, 04-02, 04-04]
 files_modified:
   - app/(admin)/(tabs)/index.tsx
   - components/admin/stat-card.tsx
