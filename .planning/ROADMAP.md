@@ -50,7 +50,7 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
   5. Every list screen that uses `EmptyState` shows the component (not a blank view) when its data array is empty; every async screen shows `Skeleton` during initial fetch, not a spinner or white flash
 **Plans**: 3 plans
   - [x] 02-01-tokens-and-tailwind-PLAN.md — global.css :root tokens + tailwind.config.js extended bindings + theme/tokens.ts typed export + Inter font loading + splash gate (UI-01)
-  - [ ] 02-02-providers-and-query-PLAN.md — RoleThemeProvider (vars() role swap) + QueryProvider (staleTime 2m, gcTime 5m, mutations retry 0) + AppState focus integration + useRole stub (UI-01)
+  - [x] 02-02-providers-and-query-PLAN.md — RoleThemeProvider (vars() role swap) + QueryProvider (staleTime 2m, gcTime 5m, mutations retry 0) + AppState focus integration + useRole stub (UI-01)
   - [ ] 02-03-primitives-and-preview-PLAN.md — 7 primitives (Button/Card/Chip/ListRow/EmptyState/Skeleton/ErrorView) + barrel export + /dev/preview screen (3 role themes × 7 primitives visual smoke test) (UI-01, UI-02)
 **UI hint**: yes
 

@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 02-01-tokens-and-tailwind-PLAN.md
-last_updated: "2026-04-26T02:54:41.545Z"
+stopped_at: Completed 02-02-providers-and-query-PLAN.md
+last_updated: "2026-04-26T02:59:57.933Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 8
   completed_phases: 1
   total_plans: 8
-  completed_plans: 6
+  completed_plans: 7
   percent: 0
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-04-23)
 ## Current Position
 
 Phase: 02 (design-foundations) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-04-26
 
@@ -55,6 +55,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 01-scaffold P02 | 6 | 3 tasks | 17 files |
 | Phase 01-scaffold P03 | 25 | 7 tasks | 16 files |
 | Phase 02-design-foundations P01 | 2 | 3 tasks | 4 files |
+| Phase 02-design-foundations P02 | 2 | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -74,6 +75,9 @@ Recent decisions affecting current work:
 - [Phase 02-design-foundations]: Loaded only Inter_400Regular + Inter_600SemiBold (skipped 500/Medium) — saves ~250KB cold-start; type contract uses 2 weights only
 - [Phase 02-design-foundations]: borderRadius config left empty in tailwind.config.js — Tailwind defaults rounded-md/xl/2xl/full already match radius-sm/md/lg/pill exactly
 - [Phase 02-design-foundations]: theme/tokens.ts ships hex strings (not RGB triplets) — JS-side consumers (lucide icon color, iOS shadowColor, Reanimated) take hex natively; RGB triplets only needed for Tailwind alpha-modifier composition
+- [Phase 02-design-foundations]: RoleThemeProvider built but NOT mounted at root — UI-SPEC Assumption 7: sign-in screen has no role; provider mounts in role group layouts in Phase 3
+- [Phase 02-design-foundations]: queryClient exported as top-level const alongside QueryProvider — enables non-React invalidation calls (queryClient.invalidateQueries) from services/callbacks; standard TanStack Query v5 pattern
+- [Phase 02-design-foundations]: AppState 'change' bridge to focusManager.setFocused with Platform.OS !== 'web' guard — RN equivalent of refetchOnWindowFocus; gives 'reopen the app -> stale queries refetch' UX on iOS/Android only
 
 ### Pending Todos
 
@@ -87,6 +91,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T02:54:41.540Z
-Stopped at: Completed 02-01-tokens-and-tailwind-PLAN.md
+Last session: 2026-04-26T02:59:57.929Z
+Stopped at: Completed 02-02-providers-and-query-PLAN.md
 Resume file: None
