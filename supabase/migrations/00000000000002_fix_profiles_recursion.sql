@@ -1,0 +1,24 @@
+-- ============================================================
+-- Fix: infinite recursion in profiles RLS policy
+-- File: supabase/migrations/00000000000002_fix_profiles_recursion.sql
+-- ============================================================
+-- The original "profiles: admin read all" policy queries `profiles` inside
+-- its USING clause, which causes Postgres error 42P17 (infinite recursion)
+-- on EVERY profile read — including the auth.users -> profiles lookup that
+-- gotrue performs during sign-in. Result: HTTP 500 "Database error querying
+-- schema" on every login attempt.
+--
+-- The admin-read-all use case ships in Phase 4 (admin experience). For now
+-- we drop the recursive policy. Every user can still read/write their own
+-- profile via the "profiles: own read/write" policy, which is all the
+-- AuthProvider needs.
+--
+-- When Phase 4 ships, replace with a SECURITY DEFINER helper:
+--   create function public.is_admin(uid uuid) returns boolean
+--     language sql security definer stable set search_path = public as $$
+--     select exists (select 1 from public.profiles where id = uid and role = 'admin');
+--   $$;
+--   create policy "profiles: admin read all" on public.profiles
+--     for select using (public.is_admin(auth.uid()));
+
+drop policy if exists "profiles: admin read all" on public.profiles;
