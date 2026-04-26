@@ -18,9 +18,9 @@ Requirements derived from the assignment spec (`reference/mobile-developer.md`) 
 
 ### Admin Experience
 
-- [ ] **ADMIN-01**: Admin sees a dashboard with institution stats (total students, professors, courses, departments) fetched live from Supabase
-- [ ] **ADMIN-02**: Admin can view a list of all departments with their assigned professors; tapping a department shows its detail
-- [ ] **ADMIN-03**: Admin can drill from department detail into a professor's profile, showing the professor's assigned courses
+- [x] **ADMIN-01**: Admin sees a dashboard with institution stats (total students, professors, courses, departments) fetched live from Supabase
+- [x] **ADMIN-02**: Admin can view a list of all departments with their assigned professors; tapping a department shows its detail
+- [x] **ADMIN-03**: Admin can drill from department detail into a professor's profile, showing the professor's assigned courses
 
 ### Professor Experience
 
@@ -99,9 +99,9 @@ Each v1 requirement maps to exactly one phase.
 | AUTH-04 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-05 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-06 | Phase 3 (Auth + Role Router) | Pending |
-| ADMIN-01 | Phase 4 (Admin Experience) | Pending |
-| ADMIN-02 | Phase 4 (Admin Experience) | Pending |
-| ADMIN-03 | Phase 4 (Admin Experience) | Pending |
+| ADMIN-01 | Phase 4 (Admin Experience) | Complete |
+| ADMIN-02 | Phase 4 (Admin Experience) | Complete |
+| ADMIN-03 | Phase 4 (Admin Experience) | Complete |
 | PROF-01 | Phase 5 (Professor Experience) | Pending |
 | PROF-02 | Phase 5 (Professor Experience) | Pending |
 | PROF-03 | Phase 5 (Professor Experience) | Pending |

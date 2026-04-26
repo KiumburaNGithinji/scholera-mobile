@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: verifying
-stopped_at: Completed 02-03-primitives-and-preview-PLAN.md (Phase 2 final plan)
-last_updated: "2026-04-26T03:09:18.665Z"
+status: executing
+stopped_at: Completed 04-02-query-hooks-PLAN.md
+last_updated: "2026-04-26T05:11:13.283Z"
 last_activity: 2026-04-26
 progress:
   total_phases: 8
   completed_phases: 2
-  total_plans: 8
-  completed_plans: 8
+  total_plans: 12
+  completed_plans: 11
   percent: 0
 ---
 
@@ -21,13 +21,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-04-23)
 
 **Core value:** Role-aware, native-feeling mobile experience — login correctly detects admin/professor/student and routes into a distinct, purposeful experience for each role
-**Current focus:** Phase 02 — design-foundations
+**Current focus:** Phase 04 — admin-experience
 
 ## Current Position
 
-Phase: 3
-Plan: Not started
-Status: Phase complete — ready for verification
+Phase: 04 (admin-experience) — EXECUTING
+Plan: 2 of 4
+Status: Ready to execute
 Last activity: 2026-04-26
 
 Progress: [░░░░░░░░░░] 0%
@@ -57,6 +57,7 @@ Progress: [░░░░░░░░░░] 0%
 | Phase 02-design-foundations P01 | 2 | 3 tasks | 4 files |
 | Phase 02-design-foundations P02 | 2 | 3 tasks | 5 files |
 | Phase 02-design-foundations P03 | 3 | 3 tasks | 9 files |
+| Phase 04 P02 | 4 | 5 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,10 @@ Recent decisions affecting current work:
 - [Phase 02-design-foundations]: Chip uses font-sans (Inter 400) NOT font-medium — UI-SPEC FLAG resolved; 2-weight typography contract enforced
 - [Phase 02-design-foundations]: Reanimated v4 (installed) is API-compatible with v3 shared-value pattern — useSharedValue/useAnimatedStyle/withRepeat/withTiming/Easing stable across versions; only v4 wrinkle is stricter style typing requiring unknown-cast on dimension style
 - [Phase 02-design-foundations]: 4-state contract enforced at primitive layer (Pending → SkeletonX, Error → ErrorView, Empty → EmptyState, Success → composition) — downstream Phases 4-8 never reach for raw View/Text/Pressable for design surfaces
+- [Phase 04]: [Phase 04-admin-experience]: queryKey namespace ['admin', resource, ...id?] established — Phase 5/6 must use ['professor', ...] and ['student', ...] to avoid cache collisions
+- [Phase 04]: [Phase 04-admin-experience]: Admin dashboard stats bundled in single useQuery (4 parallel HEAD count queries via Promise.all) — one cache entry, one skeleton, one error path matches the 2x2 grid render
+- [Phase 04]: [Phase 04-admin-experience]: Detail hooks accept id|undefined + enabled:Boolean(id) — screens pass useLocalSearchParams() values without ! assertions
+- [Phase 04]: [Phase 04-admin-experience]: Department professor counts via two-query Map-merge (no PostgREST view) — small data volume makes client aggregation essentially free
 
 ### Pending Todos
 
@@ -95,6 +100,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-26T03:08:22.796Z
-Stopped at: Completed 02-03-primitives-and-preview-PLAN.md (Phase 2 final plan)
+Last session: 2026-04-26T05:11:03.425Z
+Stopped at: Completed 04-02-query-hooks-PLAN.md
 Resume file: None
