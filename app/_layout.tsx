@@ -2,7 +2,7 @@ import '../global.css'  // NativeWind v4 requires this import at the entry point
 
 import { useEffect } from 'react'
 import { AppState, type AppStateStatus, Platform } from 'react-native'
-import { Stack } from 'expo-router'
+import { Stack, useRouter, useSegments } from 'expo-router'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 import * as SplashScreen from 'expo-splash-screen'
 import {
@@ -12,6 +12,7 @@ import {
 } from '@expo-google-fonts/inter'
 import { focusManager } from '@tanstack/react-query'
 import { QueryProvider } from '@/providers/query-provider'
+import { AuthProvider, useAuth } from '@/providers/auth-provider'
 
 // Hold the splash screen visible until fonts have loaded.
 // Per UI-SPEC: load only 2 Inter weights (400 + 600) — type contract uses exactly these.
@@ -58,8 +59,47 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <QueryProvider>
-        <Stack screenOptions={{ headerShown: false }} />
+        <AuthProvider>
+          <ProtectedRouter />
+        </AuthProvider>
       </QueryProvider>
     </SafeAreaProvider>
   )
+}
+
+/**
+ * Reads auth state and redirects between (auth) and role groups.
+ * Held until AuthProvider reports `ready` (session + role both resolved)
+ * so we never flash the wrong role's screen.
+ */
+function ProtectedRouter() {
+  const { session, role, ready } = useAuth()
+  const segments = useSegments()
+  const router = useRouter()
+
+  useEffect(() => {
+    if (!ready) return
+
+    const seg0 = segments[0]
+    const inAuthGroup = seg0 === '(auth)'
+    const inRoleGroup =
+      seg0 === '(admin)' || seg0 === '(professor)' || seg0 === '(student)'
+
+    if (!session || !role) {
+      if (!inAuthGroup) router.replace('/(auth)/sign-in')
+      return
+    }
+
+    const expected = `(${role})`
+    if (inAuthGroup) {
+      router.replace(`/${expected}/(tabs)` as never)
+    } else if (inRoleGroup && seg0 !== expected) {
+      // Wrong role group (e.g. admin landed in /(student) — replace with correct)
+      router.replace(`/${expected}/(tabs)` as never)
+    }
+  }, [session, role, ready, segments, router])
+
+  if (!ready) return null
+
+  return <Stack screenOptions={{ headerShown: false }} />
 }
