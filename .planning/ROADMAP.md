@@ -51,7 +51,7 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
 **Plans**: 3 plans
   - [x] 02-01-tokens-and-tailwind-PLAN.md — global.css :root tokens + tailwind.config.js extended bindings + theme/tokens.ts typed export + Inter font loading + splash gate (UI-01)
   - [x] 02-02-providers-and-query-PLAN.md — RoleThemeProvider (vars() role swap) + QueryProvider (staleTime 2m, gcTime 5m, mutations retry 0) + AppState focus integration + useRole stub (UI-01)
-  - [ ] 02-03-primitives-and-preview-PLAN.md — 7 primitives (Button/Card/Chip/ListRow/EmptyState/Skeleton/ErrorView) + barrel export + /dev/preview screen (3 role themes × 7 primitives visual smoke test) (UI-01, UI-02)
+  - [x] 02-03-primitives-and-preview-PLAN.md — 7 primitives (Button/Card/Chip/ListRow/EmptyState/Skeleton/ErrorView) + barrel export + /dev/preview screen (3 role themes × 7 primitives visual smoke test) (UI-01, UI-02)
 **UI hint**: yes
 
 ### Phase 3: Auth + Role Router
