@@ -6,6 +6,19 @@ Submitted by **Kiumbura N. Githinji** for the Scholera Mobile Developer Intern t
 
 ---
 
+## Screenshots
+
+Captured from iPhone 16 Plus simulator (iOS 18.5) on the live Supabase backend.
+
+| Sign in | Admin home (steel) | Professor home (clay) | Student home (sage) |
+|---|---|---|---|
+| ![Sign in](submission/screenshots/01-sign-in.png) | ![Admin Dashboard](submission/screenshots/02-admin-home.png) | ![Professor My Courses](submission/screenshots/03-professor-home.png) | ![Student My Courses](submission/screenshots/04-student-home.png) |
+| Welcome screen, react-hook-form + zod validation, sage primary button (default theme). | "Dashboard ships in Phase 4" placeholder. Header tab tinted **steel** (admin accent). | "Course management ships in Phase 5". Header tab tinted **clay** (professor accent — visible bottom-right book icon + "My Courses" label). | "Course detail ships in Phase 6". iOS password-save dialog showing — captured during real demo flow. |
+
+The empty-state placeholders on each home are intentional: Phases 4–6 (the role-specific feature surfaces) are scoped but not yet implemented. Each placeholder uses the `EmptyState` primitive from the shared design system, which is exactly the component every shipped screen will use when its data array is empty.
+
+---
+
 ## Submission status (honest)
 
 This is a **2-day timeboxed prototype**. What ships in this repo:
