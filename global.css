@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Design tokens — single source of truth for all color values.
+   Format: RGB triplet (space-separated, no commas, no rgb() wrapper).
+   Tailwind utilities reference these via rgb(var(--color-X) / <alpha-value>).
+   --color-accent default = student sage; RoleThemeProvider overrides per subtree. */
+:root {
+  /* Surface tokens (60/30 — neutral foundation, role-independent) */
+  --color-canvas: 250 249 245;            /* #FAF9F5 — primary screen bg */
+  --color-surface: 245 242 235;           /* #F5F2EB — cards, sheet surfaces */
+  --color-surface-elevated: 255 255 255;  /* #FFFFFF — input fields, topmost modal */
+
+  /* Foreground tokens */
+  --color-fg-primary: 42 38 34;           /* #2A2622 — body + headings */
+  --color-fg-muted: 122 115 106;          /* #7A736A — captions, meta, placeholder */
+  --color-border-subtle: 232 226 213;     /* #E8E2D5 — card borders, dividers */
+
+  /* Role accent (default = student sage; overridden by RoleThemeProvider via vars()) */
+  --color-accent: 134 161 124;            /* #86A17C */
+
+  /* Semantic colors (role-independent, used sparingly) */
+  --color-destructive: 180 84 71;         /* #B45447 — sign-out confirm, destructive btn */
+  --color-success: 94 138 96;             /* #5E8A60 — "complete" status only */
+  --color-warning: 196 147 85;            /* #C49355 — "in progress" status (non-prof) */
+}
