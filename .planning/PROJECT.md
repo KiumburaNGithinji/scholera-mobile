@@ -17,17 +17,20 @@ A native mobile companion app for **Scholera**, an AI-native Learning Management
 - [x] Reusable primitives: Button, Card, Chip, ListRow, EmptyState, Skeleton, ErrorView — UI-01, UI-02
 - [x] Native-feeling polish foundation (spacing scale, Inter typography, skeleton shimmer, role accent swap) — UI-01, UI-02
 
+**Auth + role routing (Phase 3, fast-mode):**
+- [x] Email + password sign-in via Supabase Auth — AUTH-01 (type-checked; runtime smoke deferred to demo)
+- [x] Read user role from profile after login — AUTH-02
+- [x] Route each role to a separate home experience (with splash gate, no role-flash) — AUTH-02
+- [x] Session persists across app restarts (AsyncStorage rehydration in getSession init) — AUTH-03
+- [x] Expired sessions handled gracefully (onAuthStateChange SIGNED_OUT clears state) — AUTH-04
+- [x] Sign-out from any role (visible in tab header for all 3 role groups) — AUTH-05, AUTH-06
+
 ### Active
 
 <!-- Grouped by role. REQ-IDs assigned in REQUIREMENTS.md during definition step. -->
 
 **Authentication & role routing (all roles):**
-- [ ] Email + password sign-in via Supabase Auth
-- [ ] Read user role from profile (`admin` | `professor` | `student`) after login
-- [ ] Route each role to a completely separate home experience
-- [ ] Session persists across app restarts
-- [ ] Expired sessions handled gracefully
-- [ ] Sign-out from any role
+- [x] Validated in Phase 3 (fast-mode) — see `.planning/phases/03-auth-and-role-router/`
 
 **Admin:**
 - [ ] Admin dashboard with institution stats (students, professors, courses, departments)
