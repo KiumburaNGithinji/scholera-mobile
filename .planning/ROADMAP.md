@@ -48,7 +48,10 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
   3. All 7 primitives exist and render without errors: `Button` (with `disabled` and `isPending` props), `Card`, `Chip`, `ListRow`, `EmptyState` (icon + title + optional CTA), `Skeleton` (shimmer), `ErrorView`
   4. `QueryClient` configured with `staleTime: 2 min` and `gcTime: 5 min`; a tab switch on a screen with cached data shows no spinner
   5. Every list screen that uses `EmptyState` shows the component (not a blank view) when its data array is empty; every async screen shows `Skeleton` during initial fetch, not a spinner or white flash
-**Plans**: TBD
+**Plans**: 3 plans
+  - [ ] 02-01-tokens-and-tailwind-PLAN.md — global.css :root tokens + tailwind.config.js extended bindings + theme/tokens.ts typed export + Inter font loading + splash gate (UI-01)
+  - [ ] 02-02-providers-and-query-PLAN.md — RoleThemeProvider (vars() role swap) + QueryProvider (staleTime 2m, gcTime 5m, mutations retry 0) + AppState focus integration + useRole stub (UI-01)
+  - [ ] 02-03-primitives-and-preview-PLAN.md — 7 primitives (Button/Card/Chip/ListRow/EmptyState/Skeleton/ErrorView) + barrel export + /dev/preview screen (3 role themes × 7 primitives visual smoke test) (UI-01, UI-02)
 **UI hint**: yes
 
 ### Phase 3: Auth + Role Router
@@ -132,7 +135,7 @@ A 2-day sprint to build and submit a role-aware native mobile LMS companion. The
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Scaffold | 3/5 | Complete    | 2026-04-25 |
-| 2. Design Foundations | 0/TBD | Not started | - |
+| 2. Design Foundations | 0/3 | Not started | - |
 | 3. Auth + Role Router | 0/TBD | Not started | - |
 | 4. Admin Experience | 0/TBD | Not started | - |
 | 5. Professor Experience | 0/TBD | Not started | - |
