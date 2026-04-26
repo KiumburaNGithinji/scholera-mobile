@@ -45,7 +45,7 @@ Requirements derived from the assignment spec (`reference/mobile-developer.md`) 
 
 ### UI Quality & Polish
 
-- [ ] **UI-01**: Design system exists with tokens (colors, spacing, type, radii) and primitives (`Button`, `Card`, `Chip`, `ListRow`, `EmptyState`, `Skeleton`, `ErrorView`). Each role has a distinct accent color (admin = steel, professor = clay, student = sage) injected via `RoleThemeProvider` so the three experiences feel visually distinct.
+- [x] **UI-01**: Design system exists with tokens (colors, spacing, type, radii) and primitives (`Button`, `Card`, `Chip`, `ListRow`, `EmptyState`, `Skeleton`, `ErrorView`). Each role has a distinct accent color (admin = steel, professor = clay, student = sage) injected via `RoleThemeProvider` so the three experiences feel visually distinct.
 - [ ] **UI-02**: Every screen handles empty states (e.g. "No announcements yet" instead of blank), loading states (skeletons, not abrupt flashes), and error states (friendly surface, no crash).
 - [ ] **UI-03**: App feels native and polished — platform-appropriate conventions (iOS/Android), consistent spacing and typography throughout, no WebView feel.
 
@@ -91,7 +91,7 @@ Each v1 requirement maps to exactly one phase.
 |-------------|-------|--------|
 | SUB-01 | Phase 1 (Scaffold) | Pending |
 | SUB-05 | Phase 1 (Scaffold) | Pending |
-| UI-01 | Phase 2 (Design Foundations) | Pending |
+| UI-01 | Phase 2 (Design Foundations) | Complete |
 | UI-02 | Phase 2 (Design Foundations) | Pending |
 | AUTH-01 | Phase 3 (Auth + Role Router) | Pending |
 | AUTH-02 | Phase 3 (Auth + Role Router) | Pending |
